@@ -4,16 +4,16 @@ const baseConfig = {
 
 const configSwitch = {};
 
-configSwitch.prod = Object.assign(baseConfig, {
+configSwitch.prod = Object.assign({}, baseConfig, {
   ShowReduxDevTools: false,
   HotReload: false
 });
 
-configSwitch.dev = Object.assign(baseConfig, {
+configSwitch.dev = Object.assign({}, baseConfig, {
   ShowReduxDevTools: true,
-  HotReload: false
+  HotReload: true
 });
 
-const env = process.env.NODE_ENV === 'prod' ? 'prod' : 'dev';
+const env = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
 const config = configSwitch[env];
 export default config;
