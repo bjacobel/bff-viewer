@@ -20,7 +20,7 @@ export const fetchViolation = () => {
   return (dispatch) => {
     dispatch(requestViolation());
 
-    return getViolation('row-n529.r6hw~znc4')
+    return getViolation(window.location.hash.slice(2))
       .then((data) => {
         dispatch(receivedViolation(data));
       })

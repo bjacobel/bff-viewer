@@ -7,7 +7,9 @@ export default class Violation extends Component {
 
     let contents;
 
-    if (data.loading) {
+    if (data.error) {
+      contents = <p>{ data.message }</p>;
+    } else if (data.loading) {
       contents = <h3>Loading...</h3>;
     } else {
       contents = (
