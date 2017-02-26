@@ -1,4 +1,4 @@
-import { getViolation } from '../services/socrata';
+import { getViolation } from '../services/opendata';
 
 export const REQUEST_VIOLATION = 'REQUEST_VIOLATION';
 export const RECEIVED_VIOLATION = 'RECEIVED_VIOLATION';

@@ -5,7 +5,7 @@ cache:
   - node_modules
 env:
   global:
-  - NODE_ENV=production
+    - NODE_ENV=test
 script:
 - npm run lint
 before_deploy:

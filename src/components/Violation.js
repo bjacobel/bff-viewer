@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import moment from 'moment';
+import format from 'date-fns/format';
 
 export default class Violation extends Component {
   render() {
@@ -18,7 +18,7 @@ export default class Violation extends Component {
           <h3>{ data.address }, { data.city }</h3>
           <p>
             <span>Violated MA { data.violation } ({ data.violdesc })</span>
-            <span> on { moment(data.violdttm).format('dddd, MMMM Do YYYY, h:mm:ss a') }</span>
+            <span> on { format(data.violdttm, 'dddd, MMMM Do YYYY, h:mm:ss a') }</span>
           </p>
           <h4>Comments:</h4>
           <p>{ data.comments }</p>
