@@ -1,6 +1,6 @@
-import config from '../constants/config';
-
 import 'isomorphic-fetch';
+
+import config from '../constants/config';
 
 const getFromSocrata = (violation) => {
   return fetch(`${config.SocrataURL}/${violation}.json`)
@@ -10,7 +10,7 @@ const getFromSocrata = (violation) => {
     .then((viol) => {
       return viol;
     });
-}
+};
 
 const getFromCkan = (violation) => {
   const query = `{"_id": ${violation}}`;
@@ -21,9 +21,9 @@ const getFromCkan = (violation) => {
     })
     .then((viol) => {
       const record = viol.result.records[0];
-      return Object.entries(record).reduce((obj, [key, value]) => ({ ...obj, [key.toLowerCase()]: value }), {})
+      return Object.entries(record).reduce((obj, [key, value]) => ({ ...obj, [key.toLowerCase()]: value }), {});
     });
-}
+};
 
 export const getViolation = (violation) => {
   const ckanId = parseInt(violation, 10);

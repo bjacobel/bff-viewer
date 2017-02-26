@@ -3,17 +3,16 @@ import { connect } from 'react-redux';
 
 import Header from './Header';
 import Violation from './Violation';
-
 import { fetchViolation } from '../actions/violations';
 
 const mapStateToProps = (state) => {
   return {
-    violation: state.violation
+    violation: state.violation,
   };
 };
 
 const mapDispatchToProps = {
-  fetchViolation
+  fetchViolation,
 };
 
 class Main extends Component {
@@ -28,8 +27,8 @@ class Main extends Component {
 
     return (
       <div>
-        <Header/>
-        <Violation data={ violation }/>
+        <Header />
+        <Violation data={ violation } />
       </div>
     );
   }
@@ -37,5 +36,5 @@ class Main extends Component {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Main);
