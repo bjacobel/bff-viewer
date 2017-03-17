@@ -1,4 +1,5 @@
 import 'isomorphic-fetch';
+import 'core-js/fn/object/entries';
 
 import config from '../constants/config';
 
